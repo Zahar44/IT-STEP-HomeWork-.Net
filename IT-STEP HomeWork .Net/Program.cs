@@ -10,6 +10,7 @@ namespace IT_STEP_HomeWork.Net
     {
         static void Main(string[] args)
         {
+            //For more details check Run class
             Run.Task5();
         }
     }
