@@ -31,7 +31,7 @@ namespace HomeWork7
         {
             StartRace = new DriveRace(cars.First().Drive);
             FinishEvent += cars.First().Finish;
-
+            
             for (int i = 1; i < cars.Count; i++)
             {
                 AddCar(cars[i]);
