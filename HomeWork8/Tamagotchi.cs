@@ -45,7 +45,6 @@ namespace HomeWork8
             timer.Start();
         }
 
-
         private void OnDeath(object sender, DeathEvent e)
         {
             timer.Stop();
