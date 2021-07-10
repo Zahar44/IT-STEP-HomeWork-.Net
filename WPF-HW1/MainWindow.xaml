@@ -1,0 +1,25 @@
+﻿<Window x:Class="WPF_HW1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_HW1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TabPanel Grid.ColumnSpan="2">
+            <Button Background="Yellow" Padding="4" Margin="2" FontSize="20">Yellow</Button>
+            <Button Background="Navy" Padding="4" Margin="2" FontSize="20">Navy</Button>
+            <Button Background="Green" Padding="4" Margin="2" FontSize="20">Green</Button>
+            <Button Background="Green" Padding="4" Margin="2" FontSize="20">Green</Button>
+            <Button Background="Green" Padding="4" Margin="2" FontSize="20">Green</Button>
+            <Button Background="Orange" Padding="4" Margin="2" FontSize="20">Orange</Button>
+        </TabPanel>
+    </Grid>
+</Window>
