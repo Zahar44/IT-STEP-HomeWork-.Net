@@ -1,0 +1,43 @@
+﻿<Window x:Class="WPF_HW4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_HW4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="500">
+
+    <DockPanel LastChildFill="True">
+        <ToolBarTray IsLocked="True" DockPanel.Dock="Top">
+            <ToolBar>
+                <Button Click="BoldTextClick">
+                    <Bold>B</Bold>
+                </Button>
+                <Button Click="ItalicTextClick">
+                    <Italic>I</Italic>
+                </Button>
+                <Button Click="UnderlineTextClick">
+                    <Underline>U</Underline>
+                </Button>
+                <Button Click="ClearTextClick">
+                    <Span>Clear</Span>
+                </Button>
+                <TextBlock VerticalAlignment="Center" Margin="5" Text="Font size"/>
+                <ComboBox x:Name="FontSizeComboBox" SelectionChanged="FontSizeChanged"/>
+                <TextBlock VerticalAlignment="Center" Margin="5" Text="Color"/>
+                <ComboBox x:Name="ColorComboBox" SelectionChanged="TextColorChanged"/>
+            </ToolBar>
+        </ToolBarTray>
+
+        <StatusBar DockPanel.Dock="Bottom">
+            <TextBlock VerticalAlignment="Center" Margin="5" Text="Start:"/>
+            <TextBlock x:Name="StartScore" VerticalAlignment="Center" Text="0"/>
+            <TextBlock VerticalAlignment="Center" Margin="5" Text="End:"/>
+            <TextBlock x:Name="EndScore" VerticalAlignment="Center" Text="0"/>
+        </StatusBar>
+
+        <RichTextBox x:Name="MainTextBox" SelectionChanged="TextBox_SelectionChanged"
+                VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                AcceptsReturn="True"/>
+    </DockPanel>
+</Window>
