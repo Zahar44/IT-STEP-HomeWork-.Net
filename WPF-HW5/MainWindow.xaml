@@ -1,0 +1,109 @@
+﻿<Window x:Class="WPF_HW5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_HW5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Row 0-->
+            <CheckBox Grid.Row="0" Grid.Column="0"
+                      HorizontalAlignment="Center" VerticalAlignment="Center"
+                      Click="AlphaCheckBoxClick" IsChecked="True"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Alpha:"
+                       VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="0" x:Name="AlphaAmount"
+                VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+            <!--Row 1-->
+            <CheckBox Grid.Row="1" Grid.Column="0"
+                      HorizontalAlignment="Center" VerticalAlignment="Center"
+                      Click="RedCheckBoxClick" IsChecked="True"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="Red:"
+                       VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="1" Grid.Column="2" Text="0" x:Name="RedAmount"
+                VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            
+            <!--Row 2-->
+            <CheckBox Grid.Row="2" Grid.Column="0"
+                      HorizontalAlignment="Center" VerticalAlignment="Center"
+                      Click="GreenCheckBoxClick" IsChecked="True"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="Green:"
+                       VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="2" Grid.Column="2" Text="0" x:Name="GreenAmount"
+                VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            
+            <!--Row 3-->
+            <CheckBox Grid.Row="3" Grid.Column="0"
+                      HorizontalAlignment="Center" VerticalAlignment="Center"
+                      Click="BlueCheckBoxClick" IsChecked="True"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="Blue:"
+                       VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="3" Grid.Column="2" Text="0" x:Name="BlueAmount"
+                VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Slider Grid.Row="0" Minimum="0" Maximum="255" Value="255"
+                    IsSelectionRangeEnabled="True" SelectionStart="0"
+                    ValueChanged="AlphaValueChanged" x:Name="AlphaSlider"/>
+            <Slider Grid.Row="1" Minimum="0" Maximum="255" Value="123"
+                    IsSelectionRangeEnabled="True" SelectionStart="0"
+                    ValueChanged="RedValueChanged" x:Name="RedSlider"/>
+            <Slider Grid.Row="2" Minimum="0" Maximum="255" Value="50"
+                    IsSelectionRangeEnabled="True" SelectionStart="0"
+                    ValueChanged="GreenValueChanged" x:Name="GreenSlider"/>
+            <Slider Grid.Row="3" Minimum="0" Maximum="255" Value="20"
+                    IsSelectionRangeEnabled="True" SelectionStart="0"
+                    ValueChanged="BlueValueChanged" x:Name="BlueSlider"/>
+        </Grid>
+
+        <Rectangle Grid.Row="1" Grid.Column="3" 
+                   Margin="10"
+                   x:Name="ColorPresentationRectangle"/>
+
+        <Button Grid.Row="3" Grid.Column="1" Content="Save"
+                Click="SaveButtonClick" x:Name="SaveButton"/>
+
+        <Border Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" 
+                BorderBrush="Black" BorderThickness="1"
+                Margin="0,5,0,0">
+            <ListBox x:Name="ColorsListBox"/>
+        </Border>
+    </Grid>
+</Window>
